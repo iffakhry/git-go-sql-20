@@ -71,7 +71,6 @@ func main() {
 	fmt.Scanln(&pilihan)
 	switch pilihan {
 	case 1:
-		fmt.Println("menu 1")
 		controllers.GetAllAccountsController(db)
 	case 2:
 		fmt.Println("menu 2")
