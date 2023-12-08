@@ -2,6 +2,7 @@ package main
 
 import (
 	"database/sql"
+	"fakhry/go-sql/controllers"
 	"fmt"
 	"log"
 	"os"
@@ -27,7 +28,7 @@ func InitDB() (*sql.DB, error) {
 		DB_PORT:     os.Getenv("DB_PORT"),
 		DB_NAME:     os.Getenv("DB_NAME"),
 	}
-	var connectionString = fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", cfg.DB_USERNAME, cfg.DB_PASSWORD, cfg.DB_HOST, cfg.DB_PORT, cfg.DB_NAME)
+	var connectionString = fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true", cfg.DB_USERNAME, cfg.DB_PASSWORD, cfg.DB_HOST, cfg.DB_PORT, cfg.DB_NAME)
 	var db *sql.DB
 	var err error
 	// Get a database handle.
@@ -70,7 +71,7 @@ func main() {
 	fmt.Scanln(&pilihan)
 	switch pilihan {
 	case 1:
-		fmt.Println("menu 1")
+		controllers.GetAllAccountsController(db)
 	case 2:
 		fmt.Println("menu 2")
 	}
