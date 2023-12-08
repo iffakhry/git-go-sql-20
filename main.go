@@ -74,5 +74,6 @@ func main() {
 		controllers.GetAllAccountsController(db)
 	case 2:
 		fmt.Println("menu 2")
+		fmt.Println("menu dari branch feature A")
 	}
 }
