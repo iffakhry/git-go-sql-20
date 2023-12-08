@@ -75,5 +75,6 @@ func main() {
 	case 2:
 		fmt.Println("menu 2")
 		fmt.Println("menu dari branch feature A")
+		fmt.Println("code dari branch feature B")
 	}
 }
